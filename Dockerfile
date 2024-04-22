@@ -13,7 +13,7 @@ WORKDIR usr/src/app
 
 COPY . ./
 
-RUN mvn clean package -Dmongo.database=$MONGO_DATABASE -Dmongo.user=$MONGO_USER -Dmongo.password=$MONGO_PASSWORD -Dmongo.cluster=$MONGO_CLUSTER
+RUN mvn clean package -Dmongo.database=${MONGO_DATABASE} -Dmongo.user=${MONGO_USER} -Dmongo.password=${MONGO_PASSWORD} -Dmongo.cluster=${MONGO_CLUSTER}
 
 #
 # Package stage
