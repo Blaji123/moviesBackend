@@ -13,9 +13,7 @@ WORKDIR usr/src/app
 
 COPY . ./
 
-RUN mvn clean package \
-    -Dspring.data.mongodb.database=${MONGO_DATABASE} \
-    -Dspring.data.mongodb.uri=mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER}
+RUN mvn clean package
 #
 # Package stage
 #
