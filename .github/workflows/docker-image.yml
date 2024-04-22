@@ -20,5 +20,5 @@ jobs:
           username : moviesbackend
           password : R27eFVjL1lxcxMh07Fq9IFZgr1jwt2mqzc+BLN31Us+ACRD8FvPy
       - run: |
-          docker build . -t demohotelregistry.azurecr.io/moviesbackend:latest
-          docker push demohotelregistry.azurecr.io/moviesbackend:latest
+          docker build . -t moviesbackend.azurecr.io/moviesbackend:latest
+          docker push moviesbackend.azurecr.io/moviesbackend:latest
