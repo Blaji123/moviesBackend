@@ -1,0 +1,24 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy JAR app to Azure Web App - movies-backend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build and deploy
+    steps:
+      - uses: actions/checkout@v3
+      - uses: azure/docker-login@v1
+        with:
+          login-server : moviesbackend.azurecr.io
+          username : moviesbackend
+          password : R27eFVjL1lxcxMh07Fq9IFZgr1jwt2mqzc+BLN31Us+ACRD8FvPy
+      - run: |
+          docker build . -t demohotelregistry.azurecr.io/moviesbackend:latest
+          docker push demohotelregistry.azurecr.io/moviesbackend:latest
