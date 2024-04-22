@@ -20,18 +20,10 @@ jobs:
           username : moviesbackend
           password : R27eFVjL1lxcxMh07Fq9IFZgr1jwt2mqzc+BLN31Us+ACRD8FvPy
       - run: |
-          docker build . -t moviesbackend.azurecr.io/moviesbackend:latest
+          docker build \
+          --build-arg MONGO_DATABASE="movie-api-db" \
+          --build-arg MONGO_USER="Blaji" \
+          --build-arg MONGO_PASSWORD="zVpoedqNH4fcx6kN" \
+          --build-arg MONGO_CLUSTER="cluster0.itq9ocy.mongodb.net" \
+          -t moviesbackend.azurecr.io/moviesbackend:latest .
           docker push moviesbackend.azurecr.io/moviesbackend:latest
-      - name: Run Docker Container
-        env:
-          MONGO_DATABASE: "movie-api-db"
-          MONGO_USER: "Blaji"
-          MONGO_PASSWORD: "zVpoedqNH4fcx6kN"
-          MONGO_CLUSTER: "cluster0.itq9ocy.mongodb.net"
-        run: |
-          docker run -d \
-            -e MONGO_DATABASE=$MONGO_DATABASE \
-            -e MONGO_USER=$MONGO_USER \
-            -e MONGO_PASSWORD=$MONGO_PASSWORD \
-            -e MONGO_CLUSTER=$MONGO_CLUSTER \
-            moviesbackend.azurecr.io/moviesbackend:latest
