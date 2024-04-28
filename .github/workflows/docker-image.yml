@@ -16,9 +16,9 @@ jobs:
       - uses: actions/checkout@v3
       - uses: azure/docker-login@v1
         with:
-          login-server : moviesbackend.azurecr.io
-          username : moviesbackend
-          password : R27eFVjL1lxcxMh07Fq9IFZgr1jwt2mqzc+BLN31Us+ACRD8FvPy
+          login-server : moviesbackend123.azurecr.io
+          username : moviesbackend123
+          password : yEG9KmAYC5JKXVBaDuBpGM3g5tcOsdpPzhTcphcZId+ACRD40YhH
       - run: |
-          docker build -t moviesbackend.azurecr.io/moviesbackend:latest .
-          docker push moviesbackend.azurecr.io/moviesbackend:latest
+          docker build -t moviesbackend123.azurecr.io/moviesbackend123:latest .
+          docker push moviesbackend123.azurecr.io/moviesbackend123
