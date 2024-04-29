@@ -17,7 +17,7 @@ public class CORSFilter extends OncePerRequestFilter {
 
     @Override
     public void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-        response.setHeader("Access-Control-Allow-Origin", "https://662e78a7b91121e60957d4f7--stellar-cassata-6f38ac.netlify.app");
+        response.setHeader("Access-Control-Allow-Origin", "https://stellar-cassata-6f38ac.netlify.app");
 //        response.setHeader("Access-Control-Allow-Credentials", "true");
 //        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTIONS, DELETE");
 //        response.setHeader("Access-Control-Max-Age", "3600");
